@@ -1,84 +1,104 @@
 import 'package:flutter/material.dart';
 
+//imported google's material design library
 void main() {
-  runApp(const MyApp());
-}
+  runApp(
+    /**Our App Widget Tree Starts Here**/
+      MaterialApp(
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text('GeeksforGeeks'),
+            backgroundColor: Colors.greenAccent[400],
+            centerTitle: true,
+          ), //AppBar
+          body: Center(
+            /** Card Widget **/
+            child: Card(
+              elevation: 50,
+              shadowColor: Colors.black,
+              color: Colors.greenAccent[100],
+              child: SizedBox(
+                width: 300,
+                height: 500,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.green[500],
+                        radius: 108,
+                        child: const CircleAvatar(
+                          backgroundImage: NetworkImage(
+                              "https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png"), //NetworkImage
+                          radius: 100,
+                        ), //CircleAvatar
+                      ), //CircleAvatar
+                      const SizedBox(
+                        height: 10,
+                      ), //SizedBox
+                      Text(
+                        'GeeksforGeeks',
+                        style: TextStyle(
+                          fontSize: 30,
+                          color: Colors.green[900],
+                          fontWeight: FontWeight.w500,
+                        ), //Textstyle
+                      ), //Text
+                      const SizedBox(
+                        height: 10,
+                      ), //SizedBox
+                      const Text(
+                        'GeeksforGeeks is a computer science portal for geeks at geeksforgeeks.org. It contains well written, well thought and well explained computer science and programming articles, quizzes, projects, interview experiences and much more!!',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.green,
+                        ), //Textstyle
+                      ), //Text
+                      const SizedBox(
+                        height: 10,
+                      ), //SizedBox
+                      SizedBox(
+                        width: 100,
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+                        child: ElevatedButton(
+                          onPressed: () => 'Null',
+                          style: ButtonStyle(
+                              backgroundColor:
+                              MaterialStateProperty.all(Colors.green)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4),
+                            child: Row(
+                              children: const [
+                                Icon(Icons.touch_app),
+                                Text('Visit')
+                              ],
+                            ),
+                          ),
+                        ),
+                        // RaisedButton is deprecated and should not be used
+                        // Use ElevatedButton instead
 
-// This widget is
-//the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'ClipOval',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePAGE(),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
-
-class MyHomePAGE extends StatefulWidget {
-  const MyHomePAGE({Key? key}) : super(key: key);
-
-  @override
-// ignore: library_private_types_in_public_api
-  _MyHomePAGEState createState() => _MyHomePAGEState();
-}
-
-class _MyHomePAGEState extends State<MyHomePAGE> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('GeeksforGeeks'),
-        backgroundColor: Colors.green,
-      ),
-      body: Center(
-          child: RichText(
-            // Controls visual overflow
-            overflow: TextOverflow.clip,
-
-            // Controls how the text should be aligned horizontally
-            textAlign: TextAlign.end,
-
-            // Control the text direction
-            textDirection: TextDirection.rtl,
-
-            // Whether the text should break at soft line breaks
-            softWrap: true,
-
-            // Maximum number of lines for the text to span
-            maxLines: 1,
-
-            // The number of font pixels for each logical pixel
-            textScaleFactor: 1,
-            text: TextSpan(
-              text: 'Hello ',
-              style: DefaultTextStyle.of(context).style,
-              children: const <TextSpan>[
-                TextSpan(
-                    text: 'Geeks', style: TextStyle(fontWeight: FontWeight.bold)),
-              ],
-            ),
-          )),
-      backgroundColor: Colors.lightBlue[50],
-    );
-  }
-}
-
-class MyClip extends CustomClipper<Rect> {
-  @override
-  Rect getClip(Size size) {
-    return const Rect.fromLTWH(0, 0, 100, 100);
-  }
-
-  @override
-  bool shouldReclip(oldClipper) {
-    return false;
-  }
+                        // child: RaisedButton(
+                        // onPressed: () => null,
+                        // color: Colors.green,
+                        // child: Padding(
+                        //	 padding: const EdgeInsets.all(4.0),
+                        //	 child: Row(
+                        //	 children: const [
+                        //		 Icon(Icons.touch_app),
+                        //		 Text('Visit'),
+                        //	 ],
+                        //	 ), //Row
+                        // ), //Padding
+                        // ), //RaisedButton
+                      ) //SizedBox
+                    ],
+                  ), //Column
+                ), //Padding
+              ), //SizedBox
+            ), //Card
+          ), //Center
+        ), //Scaffold
+      ) //MaterialApp
+  );
 }
