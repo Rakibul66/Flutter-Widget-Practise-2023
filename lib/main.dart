@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:readmore/readmore.dart';
 
 void main() {
+<<<<<<< Updated upstream
   runApp(const MyApp());
 }
 
@@ -80,5 +82,47 @@ class MyClip extends CustomClipper<Rect> {
   @override
   bool shouldReclip(oldClipper) {
     return false;
+=======
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Expandable Widgets',
+        theme: ThemeData(
+          primarySwatch: Colors.green,
+        ),
+        home: Scaffold(
+          appBar: AppBar(
+            title: Text("GeeksForGeeks"),
+            centerTitle: true,
+          ),
+          body: Center(
+              child: ListView.builder(
+                  itemCount: 5,
+                  itemBuilder: (BuildContext context, int index) {
+                    return const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: ReadMoreText(
+                        'GeeksForGeeks is the best website for learning to code dzgdgd gdvzdssvsd SDVSDvcvv vdszv  sdfaf fafaaff'
+                     ,
+                        trimLines: 2,
+                        textScaleFactor: 1,
+                        colorClickableText: Colors.red,
+                        trimMode: TrimMode.Line,
+                        trimCollapsedText: 'Show more',
+                        trimExpandedText: 'Show less',
+                        style: TextStyle(color: Colors.black, fontSize: 18),
+                        moreStyle: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.red),
+                      ),
+                    );
+                  })),
+        ));
+>>>>>>> Stashed changes
   }
 }
