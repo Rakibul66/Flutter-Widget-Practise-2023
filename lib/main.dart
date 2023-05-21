@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
+<<<<<<< Updated upstream
   runApp(const MyApp());
 }
 
@@ -17,11 +18,28 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePAGE(),
+=======
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+
+// This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'InkWell',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+>>>>>>> Stashed changes
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
+<<<<<<< Updated upstream
 class MyHomePAGE extends StatefulWidget {
   const MyHomePAGE({Key? key}) : super(key: key);
 
@@ -31,10 +49,22 @@ class MyHomePAGE extends StatefulWidget {
 }
 
 class _MyHomePAGEState extends State<MyHomePAGE> {
+=======
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+
+  String inkwell='';
+
+>>>>>>> Stashed changes
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+<<<<<<< Updated upstream
         title: const Text('GeeksforGeeks'),
         backgroundColor: Colors.green,
       ),
@@ -81,4 +111,52 @@ class MyClip extends CustomClipper<Rect> {
   bool shouldReclip(oldClipper) {
     return false;
   }
+=======
+        title: Text('InkWell Widget'),
+        backgroundColor: Colors.green,
+        actions: <Widget>[
+          Text(
+            'GFG',
+            textScaleFactor: 3,
+          )
+        ],
+      ),
+      backgroundColor: Colors.lightBlue[50],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            InkWell(
+              onTap: () {
+                setState(() {
+                  inkwell='Inkwell Tapped';
+                });
+              },
+              onLongPress: () {
+                setState(() {
+                  inkwell='InkWell Long Pressed';
+                });
+              },
+              child: Container(
+                  color: Colors.green,
+                  width: 120,
+                  height: 70,
+                  child: Center(
+                      child: Text(
+                        'Inkwell',
+                        textScaleFactor: 2,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ))),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(inkwell,textScaleFactor: 2,),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+>>>>>>> Stashed changes
 }
