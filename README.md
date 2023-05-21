@@ -3,6 +3,4 @@
 A new Flutter project for 2023 may widget practise and learn
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
-The RichText widget is used to display text that uses various different styles. The displayed text is described using a tree of TextSpan objects, each of which has its own associated style that is used for that subtree. Depending on the layout constraints the text might break across multiple lines or might all be displayed on the same line.
+Container class in flutter is a convenience widget that combines common painting, positioning, and sizing of widgets. A Container class can be used to store one or more widgets and position them on the screen according to our convenience. Basically, a container is like a box to store contents. A basic container element that stores a widget has a margin, which separates the present container from other contents. The total container can be given a border of different shapes, for example, rounded rectangles, etc. A container surrounds its child with padding and then applies additional constraints to the padded extent (incorporating the width and height as constraints, if either is non-null).styles. The displayed text is described using a tree of TextSpan objects, each of which has its own associated style that is used for that subtree. Depending on the layout constraints the text might break across multiple lines or might all be displayed on the same line.
